@@ -12,8 +12,11 @@
         <input type="number" name="idade" placeholder="Idade">
         <input type="number" name="nota" placeholder="Nota (Trimestre)">
         <button type="submit" name="cadastrar">Cadastrar</button>
-        <button type="submit" name="mostrar">Mostrar alunos</button>
     </form>
+
+    <div style="position:fixed; bottom: 20px; right: 900px; font-size:xx-large">
+        <a href="view.php">Mostrar alunos</a>
+    </div>
 </body>
 </html>
 <?php
@@ -41,24 +44,4 @@ else {
 }
 }
 
-if (isset($_POST['mostrar'])) {
-    $stmt = $conn->query("SELECT * FROM alunos");
-
-    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    echo "<h2>Alunos cadastrados:</h2>";
-        echo "<table border='1' cellpadding='5' style='margin:0 auto;'>";
-        echo "<tr><th>ID</th><th>Nome</th><th>Idade</th><th>Nota</th></tr>";
-
-        foreach ($alunos as $aluno) {
-            echo "<tr>";
-            echo "<td>{$aluno['id']}</td>";
-            echo "<td>{$aluno['nome']}</td>";
-            echo "<td>{$aluno['idade']}</td>";
-            echo "<td>{$aluno['nota']}</td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-}
 ?>
