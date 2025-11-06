@@ -1,0 +1,48 @@
+.title {
+    font-size: 4rem;
+	font-style: inherit;
+    color: blue;
+}
+
+.body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.div-title {
+      width: 500px;
+      height: 100px;
+      margin-top: 150px;
+      margin-bottom: 40px;
+    }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    gap: 10px;
+}
+
+.form-button {
+    margin-top: 130px;
+    z-index: 998;
+}
+
+.div-formBack {
+    position: absolute;
+    height:700px;
+    width:700px;
+    top:100px;
+    border: 1px, solid, black;
+}
+
+.input {
+    height: 20px;
+    width: 350px;
+    z-index: 999;
+}

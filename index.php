@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlunosCRUD</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="text-align:center;">
-    <h1>Informações de alunos</h1>
-    <form action="" method="POST">
-        <input type="text" name="nome" placeholder="Nome">
-        <input type="number" name="idade" placeholder="Idade">
-        <input type="number" name="nota" placeholder="Nota (Trimestre)">
-        <button type="submit" name="cadastrar">Cadastrar</button>
-    </form>
-
-    <div style="position:fixed; bottom: 20px; right: 900px; font-size:xx-large">
+<body class="body">
+    <div class="div-title">
+    <h1 class="title">Cadastrar aluno</h1>
+    </div>
+    <form action="" method="POST" class="form">
+            <h4 style="margin-right:310px">Nome</h4>
+            <input type="text" name="nome" placeholder="Nome" class="input">
+            <h4 style="margin-right:310px">Idade</h4>
+            <input type="number" name="idade" placeholder="Idade" class="input">
+            <h4 style="margin-right:310px">Nota</h4>
+            <input type="number" name="nota" placeholder="Nota (Trimestre)" class="input">
+            <button type="submit" name="cadastrar" class="form-button">Cadastrar</button>
+        </form>
+    
+    <div style="position:fixed; bottom: 20px; right: 20px; font-size:xx-large">
         <a href="view.php">Mostrar alunos</a>
+    </div>
+    <div class="div-formBack">
     </div>
 </body>
 </html>
