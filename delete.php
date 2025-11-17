@@ -10,8 +10,8 @@ if (isset($_POST['id'])) {
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
-    echo "<p style='text-align:center; color:green;'>Aluno excluído com sucesso!</p>";
 }
 
-echo "<p style='text-align:center;'><a href='view.php'>Voltar</a></p>";
+header("Location: view.php");
+exit;
 ?>

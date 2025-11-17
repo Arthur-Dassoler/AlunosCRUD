@@ -1,48 +1,210 @@
-.title {
-    font-size: 4rem;
-	font-style: inherit;
-    color: blue;
-}
-
-.body {
+/* ===== ESTILO GERAL ===== */
+body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
-    flex-direction: column;
+    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+    font-family: 'Poppins', sans-serif;
+    color: #1e1e2f;
 }
 
-.div-title {
-      width: 500px;
-      height: 100px;
-      margin-top: 150px;
-      margin-bottom: 40px;
-    }
+/* ===== TÍTULO ===== */
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
 
+/* ===== CONTAINER DO TÍTULO ===== */
+.div-title {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+/* ===== FORMULÁRIO ===== */
 .form {
     display: flex;
     flex-direction: column;
-    margin: 0px;
-    gap: 10px;
+    gap: 15px;
+    align-items: center;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    z-index: 10;
 }
 
+/* ===== INPUTS ===== */
+.input {
+    height: 45px;
+    width: 320px;
+    padding: 0 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== BOTÃO ===== */
 .form-button {
-    margin-top: 130px;
+    margin-top: 25px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3b82f6;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     z-index: 998;
 }
 
-.div-formBack {
-    position: absolute;
-    height:700px;
-    width:700px;
-    top:100px;
-    border: 1px, solid, black;
+.form-button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
 }
 
-.input {
-    height: 20px;
-    width: 350px;
-    z-index: 999;
+/* ===== FUNDO DECORATIVO ===== */
+.div-formBack {
+    position: absolute;
+    height: 700px;
+    width: 700px;
+    top: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #93c5fd 0%, transparent 70%);
+    filter: blur(90px);
+    z-index: 1;
 }
+
+.a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+/* ===== TABELA ===== */
+.table {
+    width: 40%;
+    max-width: 900px;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+}
+
+/* Cabeçalho */
+.table th {
+    background: #3b82f6;
+    color: white;
+    padding: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Linhas */
+.table td {
+    padding: 5px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Última linha sem borda */
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover */
+.table tr:hover {
+    background: #f1f5ff;
+}
+
+/* Botões dentro da tabela */
+.table button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.table button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Coluna de ações */
+.table td form {
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.view-info {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+
+    width: 260px;
+    padding: 20px;
+
+    background: #ffffff;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e5e7eb;
+
+    font-family: Arial, sans-serif;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    z-index: 1000;
+}
+
+/* Estilo dos textos */
+.view-info p {
+    margin: 10px 0;
+    padding: 8px 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.view-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #334155;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+

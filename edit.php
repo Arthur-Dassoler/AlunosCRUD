@@ -31,8 +31,7 @@ if (isset($_POST['atualizar'])) {
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
-    echo "<p style='text-align:center; color:green;'>Aluno atualizado com sucesso!</p>";
-    echo "<p style='text-align:center;'><a href='view.php'>Voltar</a></p>";
+    header("Location: view.php");
     exit;
 }
 ?>
@@ -42,16 +41,17 @@ if (isset($_POST['atualizar'])) {
 <head>
     <meta charset="UTF-8">
     <title>Editar Aluno</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="text-align:center;">
-    <h2>Editar aluno</h2>
+    <h2 class="title">Editar aluno</h2>
 
-    <form method="POST" action="">
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars($aluno['id']); ?>">
-        <input type="text" name="nome" value="<?php echo htmlspecialchars($aluno['nome']); ?>" placeholder="Nome"><br><br>
-        <input type="number" name="idade" value="<?php echo htmlspecialchars($aluno['idade']); ?>" placeholder="Idade"><br><br>
-        <input type="number" name="nota" value="<?php echo htmlspecialchars($aluno['nota']); ?>" placeholder="Nota"><br><br>
-        <button type="submit" name="atualizar">Salvar alterações</button>
+    <form method="POST" action="" class="form" style="margin-top: 50px;">
+        <input type="hidden" name="id" class="input" value="<?php echo htmlspecialchars($aluno['id']); ?>">
+        <input type="text" name="nome" class="input" value="<?php echo htmlspecialchars($aluno['nome']); ?>" placeholder="Nome"><br><br>
+        <input type="number" name="idade" class="input" value="<?php echo htmlspecialchars($aluno['idade']); ?>" placeholder="Idade"><br><br>
+        <input type="number" name="nota" class="input" value="<?php echo htmlspecialchars($aluno['nota']); ?>" placeholder="Nota"><br><br>
+        <button type="submit" name="atualizar" class="form-button">Salvar alterações</button>
     </form>
 
     <p><a href="view.php">Voltar</a></p>
