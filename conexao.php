@@ -1,5 +1,7 @@
 <?php
 
+// Site na web: arthur-dassoler.wuaze.com
+
 class Conexao {
 
 	private $host = 'sql212.infinityfree.com';

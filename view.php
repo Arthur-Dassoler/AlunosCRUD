@@ -62,6 +62,9 @@
         echo "<p>Menor nota: $menorNota | $aluno </p>";
     }
     ?>
+        <form action="recuperacao.php" method="GET">
+    <button type="submit" class="form-button">Alunos em recuperação</button>
+	</form>
     </div>
 
     <?php
