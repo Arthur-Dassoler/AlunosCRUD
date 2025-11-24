@@ -14,15 +14,32 @@
 
     <div class="view-info">
         <?php 
-    
+        
     $stmt = $conn->query("SELECT nota FROM alunos");
     $notas = $stmt->fetchAll(PDO::FETCH_COLUMN);
     $m = count($notas) ? array_sum($notas)/count($notas) : 0;
     $media = number_format($m, 1, ',', '');
     echo '<h3 class="view-title">Dados gerais</h3>';
-    echo "<p>A média dessa turma é $media</p>";
-
-
+    echo "<p>Média: $media</p>";
+        
+        
+        
+   if (!empty($notas)) {
+    $normalized = array_map('trim', $notas); // remove espaços estranhos
+    $contagem = array_count_values($normalized);
+    if (!empty($contagem)) {
+        $modas = array_keys($contagem, max($contagem));
+        $moda = $modas[0]; // primeira moda (se houver empate, pega a primeira)
+        echo "<p>Moda: $moda</p>";
+    } else {
+        echo "<p>Moda: ---</p>";
+    }
+} else {
+    echo "<p>Moda: ---</p>";
+}
+        
+        
+        
     $stmt = $conn->query("SELECT MAX(nota) FROM alunos");
     $maiorNota = $stmt->fetchColumn();
     $stmt = $conn->prepare("SELECT nome FROM alunos WHERE nota = :nota LIMIT 1");
@@ -30,10 +47,11 @@
     $stmt->execute();
     $alunos = $stmt->fetchAll(PDO::FETCH_COLUMN);
     foreach ($alunos as $aluno) {
-        echo "<p>$aluno é o aluno(a) com a maior nota: $maiorNota</p>";
+        echo "<p>Maior nota: $maiorNota | $aluno </p>";
     }
 
-    
+        
+
     $stmt = $conn->query("SELECT MIN(nota) FROM alunos");
     $menorNota = $stmt->fetchColumn();
     $stmt = $conn->prepare("SELECT nome FROM alunos WHERE nota = :nota LIMIT 1");
@@ -41,7 +59,7 @@
     $stmt->execute();
     $alunos = $stmt->fetchAll(PDO::FETCH_COLUMN);
     foreach ($alunos as $aluno) {
-        echo "<p>$aluno é o aluno(a) com a menor nota: $menorNota</p>";
+        echo "<p>Menor nota: $menorNota | $aluno </p>";
     }
     ?>
     </div>
